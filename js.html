@@ -1,0 +1,27 @@
+<script>
+    document.addEventListener('DOMContentLoaded',function(){
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems);
+
+        document.addEventListener('DOMContentLoaded',function(){
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+        
+    });
+
+    document.getElementById('new').addEventListener('click',getelm);
+
+    function getelm(){
+      google.script.run.withSuccessHandler(newRow).getelemento();
+    }
+    
+    function newRow(elemento){
+        var table = document.getElementById("myTable");
+        var row = table.insertRow(0);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell1.innerHTML = "alumno "+ elemento ;
+        cell2.innerHTML = "alumno "+ elemento ; 
+    }
+</script>
